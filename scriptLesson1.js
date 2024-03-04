@@ -20,7 +20,7 @@
 // let a = "5";
 // let b = "13cvb";
 // let c = "12.9sxdcfgv";
-// // вивести в консоль тип
+// вивести в консоль тип
 
 // console.log(typeof Number(a));
 // console.log(typeof parseInt(b));
@@ -75,3 +75,13 @@
 //   console.log(key);
 //   console.log(user[key]);
 // }
+
+// let value = 234,
+//   remainder,
+//   sum = 0;
+// while (value) {
+//   remainder = value % 10;
+//   sum = sum + remainder;
+//   value = Math.floor(value / 10);
+// }
+// console.log(sum);
