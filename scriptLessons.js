@@ -282,6 +282,11 @@
 // for (let a = 0; a < 3; a++) {
 //   console.log(a);
 // }
+/*for needs to have 3 conditions in the(): declare a variable; 
+second condition needs to be a true or false one; 
+third what we want the action to be. First condition does not 
+necessarly need need to be perform if it has been declared earlier
+but ; should always be used in the equation*/
 
 // let sum = 0;
 // while (true) {
@@ -352,8 +357,8 @@
 // console.log(arr);
 // console.log(arr.slice(1, 3));
 // let a = [1, 2, 3];
-// arr.concat(a);
-// console.log(arr); //combine arreys
+// arr.concat(a); // concat used to combine arreys, combinig like a string does not work.
+// console.log(arr);
 // console.log(arr.indexOf("c", 1));
 // console.log(arr.includes("c"));
 // const fruits = [
@@ -532,3 +537,245 @@ const numberRef = document.querySelector('input[name="number"]');
 const buttonRef = document.querySelector("button");
 
 buttonRef.addEventListener("click", () => addNumber(numberRef.value));*/
+
+/*function checkAge() {
+  const age = prompt("Enter age");
+  if (age >= 18) {
+    return true;
+  } else {
+    return confirm("Батьки дозволили?");
+  }
+}
+const result = checkAge();
+console.log(result);*/
+
+// Lesson 25
+
+//Closure
+
+/*function creatNewSum (n){
+    return function(){
+        console.log(10*n);
+    };
+}
+const calc = creatNewSum(5);
+calc();*/
+
+/*function creatNewNumber(n){
+    return function(num){
+        return n + num;
+    };
+}
+const addFive = creatNewNumber(5);
+console.log(addFive(10));*/
+
+/*function createUrl(domain) {
+  return function (url) {
+    return `https://${url}.${domain}`;
+  };
+}
+
+const comUrl = createUrl("com");
+console.log(comUrl("google"));*/
+
+//This
+
+/*function hello(){
+    console.log("hello", this);
+}
+hello();
+
+const user = {
+    name: "Ivan",
+    city: "Kyiv",
+    sayHello: hello,
+};
+
+user.sayHello();*/
+
+/*function abc() {
+  console.log("In function");
+  console.log(this);
+}
+abc();
+
+document.querySelector("p").onclick = abc;*/
+
+/*function changeColor() {
+  console.log(this);
+  this.style.background = "green";
+}
+document.querySelector("div").onclick = changeColor;*/
+
+/*function changeColor() {
+  this.style.background = "green";
+}
+let user = document.querySelectorAll("div");
+user.forEach(function (element) {
+  element.onclick = changeColor;
+});*/
+
+/*const showList = () => {
+  console.log(this);
+};
+showList();
+const list = {
+  names: ["Ann", "Olga", "Nata"],
+  showList: showList,
+};
+list.showList();*/
+// this cannot be used with =>
+
+/*function hello() {
+  console.log(this);
+}
+const user = {
+  name: "Ivan",
+  age: 30,
+  hello: hello,
+};
+user.hello();*/
+
+// Bind
+
+/*function hello() {
+  console.log(this);
+}
+const user = {
+  name: "Ivan",
+  age: 30,
+  hello: hello,
+  sayHelloWindow: hello.bind(window),
+  info: function (city) {
+    console.log(`Name is ${this.name}`);
+    console.log(`Age is ${this.age}`);
+    console.log(`City is ${city}`);
+  },
+};
+user.info();
+
+const Ann = {
+  name: "Ann",
+  age: 23,
+};
+
+const Nata = {
+  name: "Nata",
+  age: 35,
+};
+
+user.info.bind(Ann)("Kyiv");
+user.info.bind(Nata, "Odesa")();*/
+
+// Call
+
+/*const userInfo = {
+  name: "name",
+  age: 89,
+  logInfo: function (job) {
+    console.group(`${this.name} info:`);
+    console.log(`Name is : ${this.name}`);
+    console.log(`Age is : ${this.age}`);
+    console.log(`Job is : ${job}`);
+    console.groupEnd();
+  },
+};
+
+const Ivan = {
+    name:"Ivan",
+    age: 45,
+}
+userInfo.logInfo.call(Ivan, "developer");*/
+
+// difference between bind and call, bind binds the function,
+//call binds it and calls it at the same time.
+
+// Apply
+
+/*const showUserInfo = {
+  name: name,
+  age: 87,
+  logInfo: function (job, city) {
+    console.group(`${this.name} info:`);
+    console.log(`Name is : ${this.name}`);
+    console.log(`Age is : ${this.age}`);
+    console.log(`Job is : ${job}`);
+    console.log(`City is : ${city}`);
+    console.groupEnd();
+  },
+};
+const Ivan = {
+  name: "Ivan",
+  age: 45,
+};
+
+showUserInfo.logInfo.call(Ivan, ["developer", "Lviv"]);*/
+// when adding a few new conditions (job, city), they need to be put in []
+
+/*const message = function (name, stars) {
+  console.log(`${name}, Welcome to ${this.hotel}, stars ${stars}`);
+};
+
+const Bukovel = { hotel: "Bukovel" };
+const Tourist = { hotel: "Tourist" };
+
+message.call(Bukovel, "Ivan", "5");
+message.call(Tourist, "Ivan", "3");
+
+message.apply(Bukovel, ["Ivan", "5"]);
+message.apply(Tourist, ["Ivan", "4"]);
+
+message.bind(Bukovel, "Ivan", "2")();
+message.bind(Tourist, "Ivan", "1")();*/
+
+/*const basket = {
+  showItems() {
+    console.log("In the basket: ", this.items);
+  },
+};
+
+const women = {
+  items: ["Dress", "shoes"],
+};
+
+const men = {
+  items: ["Suit", "bag"],
+};
+const child = {
+  items: ["Toys", "shorts"],
+};
+
+document
+  .querySelector("#Wom")
+  .addEventListener("click", basket.showItems.bind(women));
+document
+  .querySelector("#Men")
+  .addEventListener("click", basket.showItems.bind(men));
+document
+  .querySelector("#Child")
+  .addEventListener("click", basket.showItems.bind(child));*/
+// when using bind in this case, it does not need to be called by ()
+//as it gets called by the click on the button
+
+/*const infoCar = {
+  name: "BMW",
+  model: "M7",
+  color: "white",
+  showInfo: function () {
+    console.log(
+      "Car: " + this.name + " model: " + this.model + " color: " + this.color
+    );
+  },
+};
+
+car2 = {
+  name: "Opel",
+  model: "XXX",
+  color: "Yellow",
+};
+
+infoCar.showInfo();
+infoCar.showInfo.bind(car2)();
+
+infoCar.showInfo.call(car2);
+infoCar.showInfo.apply(car2);*/
