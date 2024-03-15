@@ -932,3 +932,81 @@ coffeeMachine.waterAmount = -20;
 console.log(coffeeMachine);
 coffeeMachine.waterAmount = 20;
 console.log(coffeeMachine);*/
+
+//Lesson 27 ES6
+
+/*class CircleBox {
+  constructor(selector) {
+    this.$el = document.querySelector(selector);
+  }
+  hide() {
+    this.$el.style.display = "none";
+  }
+  show() {
+    this.$el.style.display = "block";
+  }
+}
+class CircleItem extends CircleBox {
+  constructor(options) {
+    super(options.selector);
+    this.$el.style.width = options.size + "px";
+    this.$el.style.height = options.size + "px";
+    this.$el.style.borderRadius = "50%";
+    this.$el.style.background = options.color;
+  }
+}
+
+const CircleRed = new CircleItem({
+  selector: "#circleRed",
+  color: "red",
+  size: 50,
+});
+
+const CircleBlue = new CircleItem({
+  selector: "#circleBlue",
+  color: "blue",
+  size: 80,
+});
+
+const CircleGreen = new CircleItem({
+  selector: "#circleGreen",
+  color: "green",
+  size: 30,
+});*/
+
+/*function Car(name, color) {
+  this.name = name;
+  this.color = color;
+}
+
+Car.prototype.message = function () {
+  console.log(`${this.name} is ${this.color} color`);
+};
+Car.prototype.start = function () {
+  console.log(`${this.name} is starting!`);
+};
+
+const BMW = new Car("BMW", "red");
+const Mini = new Car("Mini", "blue");*/
+
+/*let message = {
+  messageHello() {
+    console.log(`Hello, ${this.name}`);
+  },
+  messageBye() {
+    console.log(`Bye, ${this.name}`);
+  },
+};
+
+class User {
+  constructor(name) {
+    this.name = name;
+  }
+}
+
+Object.assign(User.prototype, message);
+
+new User("Ivan").messageHello();*/
+
+/*height = height ?? 100; // new version of the same as next code
+height = height !== undefined && height !== null ? height : 100;*/
