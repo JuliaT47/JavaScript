@@ -1010,3 +1010,78 @@ new User("Ivan").messageHello();*/
 
 /*height = height ?? 100; // new version of the same as next code
 height = height !== undefined && height !== null ? height : 100;*/
+
+//Lesson 28
+/*for (let i = 0; i < document.body.childNodes.length; i++) {
+  console.log(document.body.childNodes[i]);
+}*/
+/*let circleRed = document.getElementById("circleRed");
+circleRed.style.background = "green";
+// id shoud be unique; getElementById can only be used with document
+
+let elements = document.querySelectorAll("ul>li:at-child");
+for (element of elements) {
+  console.log(element);
+}*/
+
+// let element = document.querySelector("li"); // returns the first element and stops
+// let element = document.getElementsByTagName("div");
+
+/*let circleRed = document.getElementById("circleRed");
+circleRed.hidden = true;
+circleRed.hidden = false;*/
+
+/*let circleRed = document.getElementById("circleRed");
+console.log(circleRed.value);*/
+
+/*let redCircle = document.querySelector(".redCircle");
+console.log(redCircle);*/
+
+/*let redCircle = document.querySelector(".redCircle");
+redCircle.textContent = "Hello";*/
+
+/*let women = document.querySelector(".women");
+women.style.backgroundColor = "red";*/
+
+/*let circleRed = document.querySelector("circleRed");
+console.log(circleRed.classList);
+console.log(circleRed.classList.contains("red"));
+circleRed.classList.remove("red");
+circleRed.classList.add("new");*/
+
+/*let image = document.querySelector(".image");
+console.log(image.hasAttribute("src"));
+console.log(image.getAttribute("src"));*/
+
+/*const item = document.createElement("a");
+item.href = "#";
+item.classList.add("btn");
+item.textContent = "3";
+
+const nav = document.querySelector(".nav");
+nav.appendChild(item);
+
+const heading = document.createElement("h1");
+heading.textContent = "Hello";
+const circleRed = document.querySelector(".circleRed");
+circleRed.insertBefore(heading, nav);
+
+nav.removeChild(item); // works on all browsers
+item.remove(); */ // new method, might not work on all browsers
+
+/*const text = document.querySelector(".text");
+const parent = document.querySelector(".parent");
+const clone = text.cloneNode(true);
+parent.appendChild(clone);*/
+
+/*const parent = document.querySelector(".parent");
+const text = `<p>Sorry</p>`;
+parent.innerHTML += text;*/ // randers a whole page again, not a good method
+
+/*const parent = document.querySelector(".parent");
+parent.insertAdjacentHTML("beforebegin", `<p>beforebegin</p>`);
+parent.insertAdjacentHTML("afterbegin", `<p>afterbegin</p>`);
+parent.insertAdjacentHTML("beforeend", `<p>beforeend</p>`);
+parent.insertAdjacentHTML("afterend", `<p>afterend</p>`);*/
+
+//It is important to minimise a number of request to DOM (), to improve function of the browser
