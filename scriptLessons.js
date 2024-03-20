@@ -1085,3 +1085,133 @@ parent.insertAdjacentHTML("beforeend", `<p>beforeend</p>`);
 parent.insertAdjacentHTML("afterend", `<p>afterend</p>`);*/
 
 //It is important to minimise a number of request to DOM (), to improve function of the browser
+
+// Lesson 29
+
+//1
+/*const btn1 = document.querySelector("#btn1");
+const btn2 = document.querySelector("#btn2");
+const btn3 = document.querySelector("#btn3");
+const btn4 = document.querySelector("#btn4");
+const btn5 = document.querySelector("#btn5");
+const btn6 = document.querySelector("#btn6");
+
+btn1.addEventListener("click", () => console.log("click"));
+btn2.addEventListener("contextmenu", () => console.log("contextmenu"));
+btn3.addEventListener("mouseover", () => console.log("mouseover"));
+btn4.addEventListener("mousedown", () => console.log("mousedown"));
+btn5.addEventListener("mousemove", () => console.log("mousemove"));
+btn6.addEventListener("keydown", () => console.log("keydown"));*/
+
+//2
+/*const addbtn = document.querySelector("#add");
+const removebtn = document.querySelector("#remove");
+const clickbtn = document.querySelector("#click");
+
+const handleClick = () => {
+  console.log("Hello");
+};
+
+addbtn.addEventListener("click", () => {
+  clickbtn.addEventListener("click", handleClick);
+});
+
+removebtn.addEventListener("click", () => {
+  clickbtn.removeEventListener("click", handleClick);
+});*/
+
+/*const clickbtn = document.querySelector("#click");
+const infoClick = (event) => {
+  console.log("event", event);
+};
+
+clickbtn.addEventListener("click", infoClick);*/
+
+//3
+/*const form = document.querySelector(".form");
+const loginInput = form.querySelector("input[type='text']");
+const passInput = form.querySelector("input[type='password']");
+
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const login = loginInput.value;
+  const password = passInput.value;
+
+  console.log(`Login ${login}, password ${password}`);
+  form.reset();
+};*/
+
+//4
+/*const parent = document.querySelector("#parent");
+const child = document.querySelector("#child");
+const item = document.querySelector("#item");*/
+
+/*parent.addEventListener("click", () => console.log("Click parent"));
+child.addEventListener("click", () => console.log("Click child"));
+item.addEventListener("click", () => console.log("Click item"));*/
+// if pressing on item, child and parent appear in console too.
+
+/*const handleClick = (event) => {
+  console.log("event: ", event.target);
+};
+parent.addEventListener("click", handleClick);*/
+// this time when pressing on item only item is shown in console.
+
+/*const itemClick = (event) => {
+  console.log("itemClick stop");
+  event.stopPropagation();
+};
+
+const childClick = (event) => {
+  console.log("childClick stop");
+  event.stopPropagation();
+};
+
+const parentClick = (event) => {
+  console.log("parentClick stop");
+  event.stopPropagation();
+};
+
+parent.addEventListener("click", parentClick);
+child.addEventListener("click", childClick);
+item.addEventListener("click", itemClick);*/
+// stops the parent or child appearing in console too, best not to use this function without much need, has a lot of quirks.
+
+//5
+/*const nav = document.querySelector(".nav");
+
+nav.addEventListener("click", handleClick);
+
+function handleClick(event) {
+  const checkClass = nav.querySelector("li.active");
+
+  if (checkClass) {
+    event.target.classList.remove("active");
+  } else {
+    event.target.classList.add("active");
+  }
+}*/
+
+//6
+/*const ball = document.querySelector(".ball");
+
+ball.onmousedown = function (event) {
+  function move(pageX, pageY) {
+    ball.style.left = pageX - ball.offsetWidth / 2 + "px";
+    ball.style.top = pageY - ball.offsetWidth / 2 + "px";
+  }
+
+  move(event.pageX, event.pageY);
+
+  function onMouseMove(event) {
+    move(event.pageX, event.pageY);
+  }
+
+  document.addEventListener("mousemove", onMouseMove);
+
+  ball.onmouseup = function () {
+    document.removeEventListener("mousemove", onMouseMove);
+  };
+};*/
