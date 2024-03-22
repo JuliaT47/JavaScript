@@ -1215,3 +1215,60 @@ ball.onmousedown = function (event) {
     document.removeEventListener("mousemove", onMouseMove);
   };
 };*/
+
+//Lesson 30
+//1
+/*function check() {
+  let val = document.getElementsByName("radio");
+  if (val[0].checked) {
+    console.log("Female");
+  } else {
+    console.log("Male");
+  }
+}
+
+let form = document.querySelector(".form");
+let nameInput = document.querySelector(".inputName");
+let LastNameInput = document.querySelector(".inputLastName");
+let age = document.querySelector("#age");
+let sex = document.getElementsByName("radio");
+
+form.addEventListener("submit", handleSubmit);
+
+function handleSubmit(event) {
+  event.preventDefault();
+  const info = {
+    name: nameInput.value,
+    lastName: LastNameInput.value,
+    age: age.value,
+    sex: sex[0].checked,
+  };
+  console.log(info);
+  localStorage.setItem("info", JSON.stringify(info));
+}
+
+if (localStorage.getItem("info")) {
+  const ls = JSON.parse(localStorage.getItem("info"));
+  nameInput.value = ls.name;
+  LastNameInput.value = ls.lastName;
+}*/
+// 2 shorter version of the previous code
+
+/*let form = document.querySelector("#form");
+let formData = {};
+
+form.addEventListener("input", function (event) {
+  formData[event.target.name] = event.target.value;
+  localStorage.setItem("formData", JSON.stringify(formData));
+});
+
+if (localStorage.getItem("formData")) {
+  formData = JSON.parse(localStorage.getItem("formData"));
+
+  for (let key in formData) {
+    form.elements[key].value = formData[key];
+  }
+}*/ // when the page reloads inout inside the form fields stays
+
+//3
+
