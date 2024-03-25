@@ -1,1 +1,3 @@
-console.log("hello, I am Julia");
+import { name } from "./module";
+import "./styles.css";
+console.log("Your name is: " + name);
